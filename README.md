@@ -19,7 +19,7 @@ DEFAULT=$MAILDIR/
 SPAM=$MAILDIR/.spam/
 LOCKFILE=$HOME/.lockmail
 LOGFILE=$HOME/.procmail.log
-#VERBOSE=ON # 詳細ログ出力
+#VERBOSE=ON
 
 :0
 * ^X-Original-To: moblog@example.com

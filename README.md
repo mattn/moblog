@@ -2,6 +2,21 @@
 
 Mobile Blogging System
 
+## Usege
+
+```
+Usage of ./moblog:
+  -a string
+    	accept e-mail from (default "*")
+  -d string
+    	repository of jekyll (default "/path/to/jekyll/blog")
+  -m string
+    	mail server (default "localhost:25")
+  -s string
+    	e-mail sender (default "moblog@example.com")
+  -t	use html
+```
+
 ## Installation
 
 Setup your postfix mail server to use procmail.

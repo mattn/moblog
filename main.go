@@ -76,7 +76,7 @@ func main() {
 	flag.StringVar(&accept, "a", "*", "accept e-mail from")
 	flag.StringVar(&sender, "s", "moblog@example.com", "e-mail sender")
 	flag.StringVar(&repo, "d", "/path/to/jekyll/blog", "repository of jekyll")
-	flag.BoolVar(&usehtml, "h", false, "use html")
+	flag.BoolVar(&usehtml, "t", false, "use html")
 	flag.Parse()
 
 	err := os.Chdir(repo)

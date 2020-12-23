@@ -71,10 +71,12 @@ func main() {
 	var accept string
 	var sender string
 	var repo string
+	var usehtml bool
 	flag.StringVar(&mailserver, "m", "localhost:25", "mail server")
 	flag.StringVar(&accept, "a", "*", "accept e-mail from")
 	flag.StringVar(&sender, "s", "moblog@example.com", "e-mail sender")
 	flag.StringVar(&repo, "d", "/path/to/jekyll/blog", "repository of jekyll")
+	flag.BoolVar(&usehtml, "h", false, "use html")
 	flag.Parse()
 
 	err := os.Chdir(repo)
@@ -97,9 +99,9 @@ func main() {
 		log.Fatalf("cannot parse from address: %v", err)
 	}
 
-	if env.HTML != "" {
+	if usehtml && env.HTML != "" {
 		var buf bytes.Buffer
-		if err := godown.Convert(&buf, strings.NewReader(env.HTML), nil); err != nil {
+		if err := godown.Convert(&buf, strings.NewReader(env.HTML), nil); err == nil {
 			env.Text = buf.String()
 		}
 	}
